@@ -1,0 +1,25 @@
+server:
+  port: 8000
+
+#logging:
+#  level:
+#    org.springframework.security: TRACE
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/demo;Mode=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+    hibernate.ddl-auto: create-drop
+  h2:
+    console.enabled: false
+
+jwt:
+  access-token:
+    expiry: 30
+  refresh-token:
+    expiry: 86400
